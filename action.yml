@@ -21,6 +21,11 @@ runs:
         tflint -f compact
       env:
         GITHUB_TOKEN: ${{ github.token }}
+    
+    - name: Set up Git authentication
+      run: |
+        git config --global url."https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+      
 
     - name: Init
       shell: bash
