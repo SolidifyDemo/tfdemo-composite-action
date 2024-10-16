@@ -1,0 +1,8 @@
+name: 'DeployAction'
+description: 'Deploying terraform modules'
+author: 'SolidifyDemo'
+
+runs:
+  using: "composite"
+  steps:
+    - run: echo "Hello world!"
