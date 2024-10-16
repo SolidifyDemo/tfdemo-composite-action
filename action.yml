@@ -27,6 +27,7 @@ runs:
         GITHUB_TOKEN: ${{ github.token }}
     
     - name: Set up Git authentication
+      shell: bash
       run: |
         git config --global url."https://${{ inputs.access-token }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
       
