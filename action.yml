@@ -1,6 +1,10 @@
 name: 'DeployAction'
 description: 'Deploying terraform modules'
 author: 'SolidifyDemo'
+inputs:
+  access-token:
+    description: "Some secret value"
+    required: true
 
 runs:
   using: "composite"
@@ -24,7 +28,7 @@ runs:
     
     - name: Set up Git authentication
       run: |
-        git config --global url."https://${{ secrets.GITHUB_TOKEN }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
+        git config --global url."https://${{ inputs.access-token }}:x-oauth-basic@github.com/".insteadOf "https://github.com/"
       
 
     - name: Init
