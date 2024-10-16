@@ -22,6 +22,10 @@ runs:
       env:
         GITHUB_TOKEN: ${{ github.token }}
 
+    - name: Init
+      shell: bash
+      run: terraform init
+
     - name: Validate
       shell: bash
       run: terraform validate
